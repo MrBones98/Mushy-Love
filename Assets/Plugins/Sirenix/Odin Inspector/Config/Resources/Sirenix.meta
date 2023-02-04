@@ -1,6 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 4dc0885ca4b101d438074bbdf8349a3b
 folderAsset: yes
+=======
+<<<<<<<< HEAD:Assets/Scenes/trial camera.unity.meta
+guid: 915fc24abfcfdda409911d5c6172a5a9
+========
+guid: c523757ac03cee145ae634460f3cd344
+folderAsset: yes
+>>>>>>>> danielBranch:Assets/Plugins/Sirenix/Odin Inspector/Config/Resources/Sirenix.meta
+>>>>>>> danielBranch
 DefaultImporter:
   externalObjects: {}
   userData: 

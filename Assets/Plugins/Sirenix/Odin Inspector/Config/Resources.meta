@@ -1,6 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b1ff2dcc846bdc14e99e8172b6c2b6c3
 folderAsset: yes
+=======
+<<<<<<<< HEAD:Assets/Scenes/da scene.unity.meta
+guid: 4de33afa0a1832447868b98d2d16dc8d
+========
+guid: ad961a5d549092f4c8da65ef2fe1461a
+folderAsset: yes
+>>>>>>>> danielBranch:Assets/Plugins/Sirenix/Odin Inspector/Config/Resources.meta
+>>>>>>> danielBranch
 DefaultImporter:
   externalObjects: {}
   userData: 
