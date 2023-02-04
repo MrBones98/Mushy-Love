@@ -27,7 +27,7 @@ public class InputHandler : MonoBehaviour
     {
         StartCoroutine(nameof(ConvoTurnTimer));
         Debug.Log("Sentence finished");
-        _actors[0].transform.position = Vector3.Lerp(_actorData[0], new Vector3(_actorData[0].x * 1.2f, _actorData[0].y * 1.2f, _actorData[0].z * 1.1f),5.0f);
+        //_actors[0].transform.position = Vector3.Lerp(_actorData[0], new Vector3(_actorData[0].x * 1.2f, _actorData[0].y * 1.2f, _actorData[0].z * 1.1f),5.0f);
     }
     private IEnumerator ConvoTurnTimer()
     {
@@ -40,7 +40,8 @@ public class InputHandler : MonoBehaviour
         //_actors[0].transform.position = Vector3.Lerp(originalPos, new Vector3(originalPos.x *1.2f, originalPos.y*1.2f, originalPos.z * 1.1f), 1/2.0f);
         //_actors[0].transform.DOPunchPosition(new Vector3(-0.9f,0,-0.6f) * Time.deltaTime, 2.0f);
         //_actors[0].transform.DOMove(new Vector3(0.9f, 0, 0.6f), 2.0f).SetEase(Ease.OutQuart);
-        _actors[0].transform.DOMove(originalPos + Vector3.back,1.0f).SetEase(Ease.OutBack);
+        _actors[0].transform.DOMove(originalPos + Vector3.back*2.5f,1.0f).SetEase(Ease.OutBack);
+        //_actors[0].transform.DO
             
         //}
         yield return null;
