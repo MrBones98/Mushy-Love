@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-public class DialogueEvent : MonoBehaviour
+[CreateAssetMenu(fileName = "New Dialogue Event", menuName = "Dialogue/Event")]
+public class DialogueEvent : ScriptableObject
 {
 
 	[System.Serializable]
@@ -14,10 +15,10 @@ public class DialogueEvent : MonoBehaviour
 		[TextArea(4, 8)]
 		public string dialText;
 
-		public bool updateBehaviour = false;
-		public bool otherUpdates = false;
+        public bool updateBehaviour = false;
+        public bool otherUpdates = false;
 
-		[Header("Behaviour")]
+        [Header("Behaviour")]
 		[ShowIf("updateBehaviour", true)]
 		//public ActorMood actorMood;
 
@@ -31,6 +32,12 @@ public class DialogueEvent : MonoBehaviour
 		[ShowIf("otherUpdates", true)]
 		public float continueTime;
 
-
 	}
+
+	[Header("Identification")]
+	public string actorID;
+	//public List<GameFlag> gameFlags = new List<GameFlag>();
+
+	[Header("Insert dialogue content here")]
+	public DialogueChunk[] dialogueChunks;
 }
