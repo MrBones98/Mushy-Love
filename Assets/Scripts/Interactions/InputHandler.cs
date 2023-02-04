@@ -10,6 +10,9 @@ public class InputHandler : MonoBehaviour
     public event UpdateHandler inputHandled;
    private void Awake()
    {
+        _actorData.Add(_actors[0].gameObject.transform.position);
+        _actorData.Add(_actors[1].gameObject.transform.eulerAngles);
+        _actorData.Add(_actors[2].gameObject.transform.localPosition);
    }
     public void ConversationEngaged()
     {
@@ -20,9 +23,11 @@ public class InputHandler : MonoBehaviour
     {
         Debug.Log("Sentence starting");
         float timer = 0;
-
+        Vector3 originalPos = _actorData[0];
         while (timer <= 2.0f)
         {
+            //This is for the poping in front part   
+            //_actors[0].
             timer += Time.deltaTime;
             Debug.Log(timer);
         }
