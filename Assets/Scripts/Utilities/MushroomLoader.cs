@@ -20,10 +20,10 @@ public class MushroomLoader : MonoBehaviour
         {
             Destroy(Instance);
         }
-        for (int i = 0; i < _actorsPositioning.Count-1; i++)
-        {
-            Debug.Log(_actorsPositioning[i]);
-        }
+        //for (int i = 0; i < _actorsPositioning.Count-1; i++)
+        //{
+        //    Debug.Log(_actorsPositioning[i]);
+        //}
     }
 
     private void Start()
