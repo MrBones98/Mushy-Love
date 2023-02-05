@@ -67,7 +67,7 @@ public class DialogueManager : MonoBehaviour
 		//if (Input.GetKeyDown(KeyCode.Space) && !inDialogueEvent)
 		//	StartCoroutine(EnqueueDialogue(dialogueEvent));
 
-		if (Input.GetKeyDown(KeyCode.Space) && inDialogueEvent && !inResponse && !stopTriggerBuffer)
+		if (Input.GetMouseButtonDown(0) && inDialogueEvent && !inResponse && !stopTriggerBuffer)
 			DequeueDialogue();
 	}
 

@@ -16,7 +16,7 @@ public class Parallax : MonoBehaviour
             Shake();
         }
     }
-    private void Shake()
+    public void Shake()
     {
         if (_shakingObject != null)
             _shakingObject.transform.DOShakePosition(2);

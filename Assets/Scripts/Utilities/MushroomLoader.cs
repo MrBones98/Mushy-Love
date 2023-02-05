@@ -11,10 +11,16 @@ public class MushroomLoader : MonoBehaviour
     [SerializeField] private List<Mushroom> _mushrooms = new List<Mushroom>();
     [SerializeField] private List<GameObject> _mushroomCharacters = new List<GameObject>();
     [SerializeField] private int _mushroomNameDisplayFontSize = 8;
-    
+
+    [SerializeField] private GameObject _responseBox;
+    [SerializeField] private List<GameObject> _responesButtons;
+
+
     [HideInInspector] public MushroomLoader Instance;
+    
     private void Awake()
     {
+
         Raycaster.conversationEngaged += ConversationEngaged;
         if (Instance == null)
         {
@@ -25,10 +31,69 @@ public class MushroomLoader : MonoBehaviour
             Destroy(Instance);
         }
     }
+    private void Update()
+    {
+        if(DialogueManager.Instance.inResponse)
+        {
+            if(DialogueManager.Instance.dialogueEvent.responses.Count == 0)
+            {
+                _responesButtons[0].SetActive(true);
+                
+            }
+            else if(DialogueManager.Instance.dialogueEvent.responses.Count-1 == 1)
+            {
+                _responesButtons[0].SetActive(true);
+                _responesButtons[1].SetActive(true);
+               
 
+            }
+            else if(DialogueManager.Instance.dialogueEvent.responses.Count-1 == 2)
+            {
+                _responesButtons[0].SetActive(true);
+                _responesButtons[1].SetActive(true); 
+                _responesButtons[2].SetActive(true);
+
+            }
+
+            UpdateResponseUI();
+        }
+        else
+        {
+            _responesButtons[0].SetActive(false);
+            _responesButtons[1].SetActive(false);
+            _responesButtons[2].SetActive(false);
+        }
+
+        
+
+
+    }
     private void ConversationEngaged()
     {
-        _mushroomCharacters[0].transform.DOMove(new Vector3(-5.94f, 0.8f, -0.42f),1.0f).SetEase(Ease.OutBack);
+        
+        _mushroomCharacters[0].transform.DOMove(new Vector3(-5.34f, -1.16, 0.42f),1.0f).SetEase(Ease.OutBack);
+    }
+
+    void UpdateResponseUI()
+    {
+
+        if (DialogueManager.Instance.dialogueEvent.responses.Count-1 == 0)
+        {
+            _responesButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = DialogueManager.Instance.dialogueEvent.responses[0].Response;
+        }
+        else if(DialogueManager.Instance.dialogueEvent.responses.Count-1 == 1)
+        {
+            _responesButtons[0].GetComponentInChildren <TextMeshProUGUI>().text = DialogueManager.Instance.dialogueEvent.responses[0].Response;
+            _responesButtons[1].GetComponentInChildren <TextMeshProUGUI>().text = DialogueManager.Instance.dialogueEvent.responses[1].Response;
+        }
+        else if (DialogueManager.Instance.dialogueEvent.responses.Count -1 == 2)
+        {
+            _responesButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = DialogueManager.Instance.dialogueEvent.responses[0].Response;
+            _responesButtons[1].GetComponentInChildren<TextMeshProUGUI>().text = DialogueManager.Instance.dialogueEvent.responses[1].Response;
+            _responesButtons[2].GetComponentInChildren<TextMeshProUGUI>().text = DialogueManager.Instance.dialogueEvent.responses[2].Response;
+        }
+
+
     }
 
     private void Start()
