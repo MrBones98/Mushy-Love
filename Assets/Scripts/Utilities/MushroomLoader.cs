@@ -14,8 +14,7 @@ public class MushroomLoader : MonoBehaviour
     
     [HideInInspector] public MushroomLoader Instance;
     private void Awake()
-    {
-        Debug.Log("Hello one instance");
+    { 
         if (Instance == null)
         {
             Instance = this;
@@ -43,8 +42,10 @@ public class MushroomLoader : MonoBehaviour
 
             button.name = $"{mushroom.Name}Button";
             button.transform.SetParent(canvaInteraction.transform);
+            button.AddComponent<Image>();
             button.AddComponent<Button>();
             button.GetComponent<Button>().onClick.AddListener(() => DebugTest());
+            
 
             spawnedMushroom.AddComponent<SpriteRenderer>();
             spawnedMushroom.GetComponent<SpriteRenderer>().sprite = mushroom.Image;
@@ -73,7 +74,7 @@ public class MushroomLoader : MonoBehaviour
             spawnedMushroom.transform.SetParent(container.transform);
             spawnedMushroom.transform.position = _actorsPositioning[i].position;
             i++;
-            Debug.Log(i);
+            //Debug.Log(i);
         }
     }
 
