@@ -19,7 +19,7 @@ public class InitiateDialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-			InitiateDialogueByID("John", "help");
+			InitiateDialogueByID("MagicMush", "Opening");
         }
     }
 

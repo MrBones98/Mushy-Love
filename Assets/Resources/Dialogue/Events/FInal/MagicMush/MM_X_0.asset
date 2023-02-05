@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6265bdb4992d644786eb00e0bc07cc4, type: 3}
+  m_Name: MM_X_0
+  m_EditorClassIdentifier: 
+  actorID: MagicMush
+  subId: Opening
+  gameFlags: []
+  dialogueChunks:
+  - profile: {fileID: 11400000, guid: 25772f6056b854944b76a179ac6ea938, type: 2}
+    dialText: The network runs deep, but I promise you, I can take you deeper.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 11400000, guid: 25772f6056b854944b76a179ac6ea938, type: 2}
+    dialText: There is no microdosing here, hongos.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 11400000, guid: 25772f6056b854944b76a179ac6ea938, type: 2}
+    dialText: I want to go all the way.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 11400000, guid: 25772f6056b854944b76a179ac6ea938, type: 2}
+    dialText: It's the age of sickness.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 11400000, guid: 25772f6056b854944b76a179ac6ea938, type: 2}
+    dialText: Shouldn't it be embraced?
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  directDialogueSegue: {fileID: 0}
+  responses:
+  - Response: I crave the touch of a shroom.
+    loadOnId: 0
+    NewDialogue: {fileID: 0}
+    ActorID: 
+    subID: 
+    isIncremental: 0
+    FlagUpdate:
+    - flagID: MM_0
+      flagValue: 1
+  - Response: I need to focus on myself.
+    loadOnId: 0
+    NewDialogue: {fileID: 0}
+    ActorID: 
+    subID: 
+    isIncremental: 0
+    FlagUpdate:
+    - flagID: MM_0
+      flagValue: 2
+  - Response: Why are you trying so hard?
+    loadOnId: 0
+    NewDialogue: {fileID: 0}
+    ActorID: 
+    subID: 
+    isIncremental: 0
+    FlagUpdate: []

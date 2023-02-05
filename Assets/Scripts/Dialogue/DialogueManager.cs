@@ -38,6 +38,10 @@ public class DialogueManager : MonoBehaviour
 
 	int responseSelect;
 
+	public bool stopTriggerBuffer;
+
+	DialogueResponse currentResponse;
+
 	void Start()
     {
         
@@ -46,14 +50,24 @@ public class DialogueManager : MonoBehaviour
     
     void Update()
     {
-		ManageDialogue();
+		
+
+        if (inResponse)
+        {
+			Responding();
+        }
+        else
+        {
+			ManageDialogue();
+		}
 	}
 
 	void ManageDialogue()
     {
-		if (Input.GetKeyDown(KeyCode.Space) && !inDialogueEvent)
-			StartCoroutine(EnqueueDialogue(dialogueEvent));
-		else if (Input.GetKeyDown(KeyCode.Space) && inDialogueEvent && inResponse == false)
+		//if (Input.GetKeyDown(KeyCode.Space) && !inDialogueEvent)
+		//	StartCoroutine(EnqueueDialogue(dialogueEvent));
+
+		if (Input.GetKeyDown(KeyCode.Space) && inDialogueEvent && !inResponse && !stopTriggerBuffer)
 			DequeueDialogue();
 	}
 
@@ -92,10 +106,25 @@ public class DialogueManager : MonoBehaviour
 				return;
 			}
 
+            if (dialogueChunks.Count == 0 && dialogueEvent.responses.Count > 0)
+            {
+				inResponse = true;
+				return;
+            }
+
 			if (dialogueChunks.Count == 0)
 			{
 
-				EndOfDialogue();
+				if (dialogueEvent.responses.Count > 0)
+				{
+					inResponse = true;
+				}
+                else
+                {
+					EndOfDialogue();
+					print("FinishEndOfDialogue");
+				}
+
 
 				return;
 			}
@@ -169,47 +198,92 @@ public class DialogueManager : MonoBehaviour
     {
 		
 
+		//Show buttons
     }
 
     public void SelectResponse(int responseIndex)
     {
 		inResponse = false;
-		print("stfu");
-		//responseIndex = responseIndex
+		EndOfDialogue();
+		print("ResponseEndOfDialogue");
+
 		print(dialogueEvent.responses.Count);
-		DialogueResponse currentResponse = dialogueEvent.responses[responseIndex];
+		currentResponse = dialogueEvent.responses[responseIndex];
 
-		if (currentResponse.loadOnId)
+        if (!isCurrentlyTyping && !stopTriggerBuffer)
         {
-
-			foreach (var dialogueFlag in currentResponse.FlagUpdate)
+			if (currentResponse.loadOnId)
 			{
-				foreach (var managerFlag in GameFlagManager.instance.gameFlags)
+
+				foreach (var dialogueFlag in currentResponse.FlagUpdate)
 				{
-					if (dialogueFlag.flagID == managerFlag.flagID)
+					foreach (var managerFlag in GameFlagManager.instance.gameFlags)
 					{
-                        if (currentResponse.isIncremental)
-                        {
-							managerFlag.flagValue += dialogueFlag.flagValue;
-						}
-                        else
-                        {
-							managerFlag.flagValue = dialogueFlag.flagValue;
-                        }
+						if (dialogueFlag.flagID == managerFlag.flagID)
+						{
+							if (currentResponse.isIncremental)
+							{
+								managerFlag.flagValue += dialogueFlag.flagValue;
+							}
+							else
+							{
+								managerFlag.flagValue = dialogueFlag.flagValue;
+							}
 	
+						}
 					}
 				}
-			}
 
-			InitiateDialogue.Instance.InitiateDialogueByID(currentResponse.ActorID, currentResponse.subID);
-		}
-    }
+				InitiateDialogue.Instance.InitiateDialogueByID(currentResponse.ActorID, currentResponse.subID);
+			}
+			else
+			{
+
+				InitiateDialogue.Instance.InitiateDialogueDirectly(currentResponse.NewDialogue);
+			}
+        }
+
+
+
+		//StartCoroutine("WaitAframeForNewDialogue");
+		StartCoroutine(DialougeStopTriggerBuffer());
+	}
 
 
 	public void EndOfDialogue()
     {
+
+        if (inResponse)
+        {
+			return;
+        }
+
+
 		inDialogueEvent = false;
 		print("Is done");
 
-    }
+        if (dialogueEvent.directDialogueSegue != null)
+        {
+			InitiateDialogue.Instance.InitiateDialogueDirectly(dialogueEvent.directDialogueSegue);
+        }
+
+		dialogueEvent.directDialogueSegue = null;
+
+	}
+
+	IEnumerator WaitAframeForNewDialogue()
+	{
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		InitiateDialogue.Instance.InitiateDialogueDirectly(dialogueEvent.directDialogueSegue);
+	}
+
+	IEnumerator DialougeStopTriggerBuffer()
+	{
+		stopTriggerBuffer = true;
+
+		yield return new WaitForSeconds(.2f);
+
+		stopTriggerBuffer = false;
+	}
 }

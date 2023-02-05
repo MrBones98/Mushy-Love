@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6265bdb4992d644786eb00e0bc07cc4, type: 3}
+  m_Name: MM_0
+  m_EditorClassIdentifier: 
+  actorID: MagicMush
+  subId: Opening
+  gameFlags: []
+  dialogueChunks:
+  - profile: {fileID: 0}
+    dialText: Leggies shaking. Shoulders quaking.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 0}
+    dialText: I can see you tremble....
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 0}
+    dialText: I'm here for a good time.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 0}
+    dialText: Will you lift me up to the sky?
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  directDialogueSegue: {fileID: 0}
+  responses:
+  - Response: No time to fly
+    loadOnId: 0
+    NewDialogue: {fileID: 0}
+    ActorID: 
+    subID: 
+    isIncremental: 0
+    FlagUpdate:
+    - flagID: MM_0
+      flagValue: 0
+  - Response: I just wanna spore
+    loadOnId: 0
+    NewDialogue: {fileID: 0}
+    ActorID: 
+    subID: 
+    isIncremental: 0
+    FlagUpdate:
+    - flagID: MM_0
+      flagValue: 1
