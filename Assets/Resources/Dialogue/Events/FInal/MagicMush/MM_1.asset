@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MM_1
   m_EditorClassIdentifier: 
   actorID: MagicMush
-  subId: Opening
+  subId: 
   gameFlags: []
   dialogueChunks:
   - profile: {fileID: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
   responses:
   - Response: No time to fly
     loadOnId: 0
-    NewDialogue: {fileID: 0}
+    NewDialogue: {fileID: 11400000, guid: 1af293e9af2782e4f84d83d626def376, type: 2}
     ActorID: 
     subID: 
     isIncremental: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
       flagValue: 1
   - Response: I just wanna spore
     loadOnId: 0
-    NewDialogue: {fileID: 0}
+    NewDialogue: {fileID: 11400000, guid: 1af293e9af2782e4f84d83d626def376, type: 2}
     ActorID: 
     subID: 
     isIncremental: 0

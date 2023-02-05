@@ -44,7 +44,7 @@ MonoBehaviour:
   responses:
   - Response: No time to fly
     loadOnId: 0
-    NewDialogue: {fileID: 0}
+    NewDialogue: {fileID: 11400000, guid: 8ba473c350a0cf34aa958fd0f7957236, type: 2}
     ActorID: 
     subID: 
     isIncremental: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
       flagValue: 0
   - Response: I just wanna spore
     loadOnId: 0
-    NewDialogue: {fileID: 0}
+    NewDialogue: {fileID: 11400000, guid: fd144982288fbfc4b9388780cd926616, type: 2}
     ActorID: 
     subID: 
     isIncremental: 0
