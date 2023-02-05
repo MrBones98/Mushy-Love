@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using DG.Tweening;
 public class MushroomLoader : MonoBehaviour
 {
     [SerializeField] private List<Transform> _actorsPositioning = new List<Transform>();
@@ -14,7 +14,8 @@ public class MushroomLoader : MonoBehaviour
     
     [HideInInspector] public MushroomLoader Instance;
     private void Awake()
-    { 
+    {
+        Raycaster.conversationEngaged += ConversationEngaged;
         if (Instance == null)
         {
             Instance = this;
@@ -23,6 +24,11 @@ public class MushroomLoader : MonoBehaviour
         {
             Destroy(Instance);
         }
+    }
+
+    private void ConversationEngaged()
+    {
+        _mushroomCharacters[0].transform.DOMove(new Vector3(-5.94f, 0.8f, -0.42f),1.0f).SetEase(Ease.OutBack);
     }
 
     private void Start()

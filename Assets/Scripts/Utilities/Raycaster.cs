@@ -6,7 +6,7 @@ public class Raycaster : MonoBehaviour
 {
     [SerializeField] private GameObject _uiBox;
     public delegate void ConversationEngaged();
-    public event ConversationEngaged conversationEngaged;
+    public static event ConversationEngaged conversationEngaged;
 
     private bool _canRaycast = true;
     private void Update()
@@ -21,7 +21,7 @@ public class Raycaster : MonoBehaviour
         RaycastHit2D hit;
         hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition),Vector3.forward);
 
-        if(hit.collider.TryGetComponent(out SpawnedMushroom spawnedMushroom)) 
+        if (hit.collider.TryGetComponent(out SpawnedMushroom spawnedMushroom))
         {
             Debug.Log($"{spawnedMushroom.Name}");
             _canRaycast = !_canRaycast;
@@ -29,5 +29,7 @@ public class Raycaster : MonoBehaviour
             conversationEngaged();
             spawnedMushroom.GetComponent<BoxCollider2D>().enabled = false;
         }
+        else
+            return;
     }
 }

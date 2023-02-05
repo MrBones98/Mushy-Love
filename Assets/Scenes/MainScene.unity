@@ -651,7 +651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3443579101348028507, guid: d9c13a45888dad549b0e6d4a6d6f7ba6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3443579101952588267, guid: d9c13a45888dad549b0e6d4a6d6f7ba6, type: 3}
       propertyPath: m_text
@@ -2460,6 +2460,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 628348041}
     m_Modifications:
+    - target: {fileID: 72639983137831682, guid: b7b5cff8e5ba7a0408c0b475307fdad4, type: 3}
+      propertyPath: profiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 72639983137831682, guid: b7b5cff8e5ba7a0408c0b475307fdad4, type: 3}
+      propertyPath: profiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 25772f6056b854944b76a179ac6ea938, type: 2}
+    - target: {fileID: 72639983137831682, guid: b7b5cff8e5ba7a0408c0b475307fdad4, type: 3}
+      propertyPath: dialogueCollection.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 72639983137831682, guid: b7b5cff8e5ba7a0408c0b475307fdad4, type: 3}
+      propertyPath: dialogueCollection.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b22f80edf9b7e84993de8a3b5a0a6c9, type: 2}
     - target: {fileID: 72639983137831683, guid: b7b5cff8e5ba7a0408c0b475307fdad4, type: 3}
       propertyPath: m_RootOrder
       value: 2
