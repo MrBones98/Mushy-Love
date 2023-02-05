@@ -67,7 +67,7 @@ public class DialogueManager : MonoBehaviour
 		//if (Input.GetKeyDown(KeyCode.Space) && !inDialogueEvent)
 		//	StartCoroutine(EnqueueDialogue(dialogueEvent));
 
-		if (Input.GetKeyDown(KeyCode.Space) && inDialogueEvent && !inResponse && !stopTriggerBuffer)
+		if (Input.GetMouseButtonDown(0) && inDialogueEvent && !inResponse && !stopTriggerBuffer)
 			DequeueDialogue();
 	}
 
@@ -131,7 +131,7 @@ public class DialogueManager : MonoBehaviour
 
 			chunk = dialogueChunks.Dequeue();
 			GetTextDisplayLength();
-			dialogueTitle.text = chunk.profile?.title;
+			//dialogueTitle.text = chunk.profile?.title;
 
 			dialogueText.maxVisibleCharacters = 0;
 			completeText = chunk.dialText;

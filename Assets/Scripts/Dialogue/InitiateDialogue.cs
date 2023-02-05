@@ -10,10 +10,21 @@ public class InitiateDialogue : MonoBehaviour
 
 	private void Awake()
 	{
+		//Raycaster.conversationEngaged += OnConversationEngaged();
 		Instance = Instance ?? this;
+
+		Raycaster.conversationEngaged += OnConversationEngaged;
 
 		flagManager = FindObjectOfType<GameFlagManager>();
 	}
+
+    private void OnConversationEngaged()
+    {
+
+		InitiateDialogueByID("MagicMush", "Opening");
+
+    }
+
 
     private void Update()
     {
@@ -48,5 +59,9 @@ public class InitiateDialogue : MonoBehaviour
 	public void InitiateDialogueDirectly(DialogueEvent dialogue)
 	{
 		StartCoroutine(DialogueManager.Instance.EnqueueDialogue(dialogue));
+	}
+    private void OnDisable()
+    {
+		Raycaster.conversationEngaged -= OnConversationEngaged;
 	}
 }
