@@ -71,7 +71,7 @@ public class MushroomLoader : MonoBehaviour
     private void ConversationEngaged()
     {
         
-        _mushroomCharacters[0].transform.DOMove(new Vector3(-5.34f, -1.16, 0.42f),1.0f).SetEase(Ease.OutBack);
+        _mushroomCharacters[0].transform.DOMove(new Vector3(-5.34f, -1.16f, 0.42f),1.0f).SetEase(Ease.OutBack);
     }
 
     void UpdateResponseUI()
@@ -131,13 +131,13 @@ public class MushroomLoader : MonoBehaviour
 
             spawnedMushroom.AddComponent<Canvas>();
             //canvaInteraction.AddComponent<Canvas>();
-            canvaInteraction.AddComponent<TextMeshPro>();
+            //canvaInteraction.AddComponent<TextMeshPro>();
 
-            //interactable.GetComponent<Button>().image = null;
+            ////interactable.GetComponent<Button>().image = null;
             
-            canvaInteraction.GetComponent<TextMeshPro>().text = mushroom.Name;
-            canvaInteraction.GetComponent<TextMeshPro>().fontSize = _mushroomNameDisplayFontSize;
-            canvaInteraction.GetComponent<TextMeshPro>().alignment = TextAlignmentOptions.Top;
+            //canvaInteraction.GetComponent<TextMeshPro>().text = mushroom.Name;
+            //canvaInteraction.GetComponent<TextMeshPro>().fontSize = _mushroomNameDisplayFontSize;
+            //canvaInteraction.GetComponent<TextMeshPro>().alignment = TextAlignmentOptions.Top;
 
             //button.GetComponent<Button>().onClick.AddListener(() =>InitiateDialogue.Instance.
             //button.GetComponent<Button>().onClick.AddListener(InitiateDialogue.Instance.InitiateDialogueByID("John", "help"));
