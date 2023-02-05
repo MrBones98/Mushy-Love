@@ -43,7 +43,7 @@ public class MushroomLoader : MonoBehaviour
             else if(DialogueManager.Instance.dialogueEvent.responses.Count-1 == 1)
             {
                 _responesButtons[0].SetActive(true);
-                _responesButtons[1].SetActive(true);
+                _responesButtons[2].SetActive(true);
                
 
             }
@@ -84,7 +84,7 @@ public class MushroomLoader : MonoBehaviour
         else if(DialogueManager.Instance.dialogueEvent.responses.Count-1 == 1)
         {
             _responesButtons[0].GetComponentInChildren <TextMeshProUGUI>().text = DialogueManager.Instance.dialogueEvent.responses[0].Response;
-            _responesButtons[1].GetComponentInChildren <TextMeshProUGUI>().text = DialogueManager.Instance.dialogueEvent.responses[1].Response;
+            _responesButtons[2].GetComponentInChildren <TextMeshProUGUI>().text = DialogueManager.Instance.dialogueEvent.responses[1].Response;
         }
         else if (DialogueManager.Instance.dialogueEvent.responses.Count -1 == 2)
         {

@@ -131,7 +131,7 @@ public class DialogueManager : MonoBehaviour
 
 			chunk = dialogueChunks.Dequeue();
 			GetTextDisplayLength();
-			dialogueTitle.text = chunk.profile?.title;
+			//dialogueTitle.text = chunk.profile?.title;
 
 			dialogueText.maxVisibleCharacters = 0;
 			completeText = chunk.dialText;
