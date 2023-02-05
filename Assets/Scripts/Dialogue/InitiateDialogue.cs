@@ -10,6 +10,7 @@ public class InitiateDialogue : MonoBehaviour
 
 	private void Awake()
 	{
+		//Raycaster.conversationEngaged += OnConversationEngaged();
 		Instance = Instance ?? this;
 
 		Raycaster.conversationEngaged += OnConversationEngaged;
@@ -19,8 +20,13 @@ public class InitiateDialogue : MonoBehaviour
 
     private void OnConversationEngaged()
     {
+<<<<<<< Updated upstream
 		InitiateDialogueByID("MagicMush", "Opening");
 	}
+=======
+		InitiateDialogueByID("Magic Mush", "Opening");
+    }
+>>>>>>> Stashed changes
 
     private void Update()
     {
