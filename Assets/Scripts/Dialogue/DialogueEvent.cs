@@ -49,6 +49,9 @@ public class DialogueEvent : ScriptableObject
 
 	public List<DialogueResponse> responses;
 
+	public bool sporeEnd =false;
+	public bool badEnd = false;
+
 }
 
 [System.Serializable]

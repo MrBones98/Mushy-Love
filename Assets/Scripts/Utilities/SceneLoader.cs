@@ -5,6 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+
+    public static SceneLoader instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+
+        }
+    }
+
     public void LoadScene(int index)
     {
         SceneManager.LoadScene(index);

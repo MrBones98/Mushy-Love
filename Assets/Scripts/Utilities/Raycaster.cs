@@ -5,6 +5,7 @@ using UnityEngine;
 public class Raycaster : MonoBehaviour
 {
     [SerializeField] private GameObject _uiBox;
+    [SerializeField] private List<GameObject> _backgroundMushrooms;
     public delegate void ConversationEngaged();
     public static event ConversationEngaged conversationEngaged;
 
@@ -25,6 +26,12 @@ public class Raycaster : MonoBehaviour
         {
             Debug.Log($"{spawnedMushroom.Name}");
             _canRaycast = !_canRaycast;
+            for (int i = 0; i < _backgroundMushrooms.Count; i++)
+            {
+                _backgroundMushrooms[i].gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+            }
+                
+            
             _uiBox.SetActive(true);
             conversationEngaged();
             spawnedMushroom.GetComponent<BoxCollider2D>().enabled = false;
@@ -32,6 +39,4 @@ public class Raycaster : MonoBehaviour
         else
             return;
     }
-
-
 }

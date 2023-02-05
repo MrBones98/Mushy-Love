@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: MagicMush
   m_EditorClassIdentifier: 
   Name: Magic Mush
-  Image: {fileID: 21300000, guid: c4060b5b4cc853b4bb6893d7c87f8c57, type: 3}
+  Image: {fileID: 21300000, guid: cc955460be3569c42859af7cf31fc19e, type: 3}
   Threshold: 0
+  DialogueEvent: {fileID: 0}

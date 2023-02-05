@@ -7,6 +7,7 @@ using System.Linq;
 
 public class DialogueManager : MonoBehaviour
 {
+	[SerializeField] private Animator _fadeToBlack;
     public static DialogueManager Instance;
 
     private void Awake()
@@ -207,7 +208,6 @@ public class DialogueManager : MonoBehaviour
 		EndOfDialogue();
 		print("ResponseEndOfDialogue");
 
-		print(dialogueEvent.responses.Count);
 		currentResponse = dialogueEvent.responses[responseIndex];
 
         if (!isCurrentlyTyping && !stopTriggerBuffer)
@@ -269,6 +269,19 @@ public class DialogueManager : MonoBehaviour
 
 		dialogueEvent.directDialogueSegue = null;
 
+        if (dialogueEvent.sporeEnd)
+        {
+			//DO spore end
+			_fadeToBlack.GetComponent<Animator>().SetTrigger("_fadeToBlack");
+			StartCoroutine(WaitForMainMenu());
+		}
+        else if (dialogueEvent.badEnd)
+        {
+			//Do bad end
+			_fadeToBlack.GetComponent<Animator>().SetTrigger("_fadeToBlack");
+			StartCoroutine(WaitForMainMenu());
+        }
+
 	}
 
 	IEnumerator WaitAframeForNewDialogue()
@@ -285,5 +298,12 @@ public class DialogueManager : MonoBehaviour
 		yield return new WaitForSeconds(.2f);
 
 		stopTriggerBuffer = false;
+	}
+
+	IEnumerator WaitForMainMenu()
+    {
+		yield return new WaitForSeconds(4);
+		SceneLoader.instance.GoToMainMenu();
+
 	}
 }
