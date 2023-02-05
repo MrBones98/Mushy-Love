@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MM_X_1_3_0
   m_EditorClassIdentifier: 
   actorID: MagicMush
-  subId: Opening
+  subId: 
   gameFlags: []
   dialogueChunks:
   - profile: {fileID: 11400000, guid: 25772f6056b854944b76a179ac6ea938, type: 2}
@@ -44,7 +44,7 @@ MonoBehaviour:
   responses:
   - Response: No.
     loadOnId: 0
-    NewDialogue: {fileID: 0}
+    NewDialogue: {fileID: 11400000, guid: 59ce7502a44c622468273ffe9c313189, type: 2}
     ActorID: 
     subID: 
     isIncremental: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
       flagValue: 1
   - Response: Ok fine.
     loadOnId: 0
-    NewDialogue: {fileID: 0}
+    NewDialogue: {fileID: 11400000, guid: 5555d7e8aac7c5a4a93c53df9dd1abab, type: 2}
     ActorID: 
     subID: 
     isIncremental: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MM_X_1_0
   m_EditorClassIdentifier: 
   actorID: MagicMush
-  subId: Opening
+  subId: 
   gameFlags: []
   dialogueChunks:
   - profile: {fileID: 11400000, guid: 25772f6056b854944b76a179ac6ea938, type: 2}
@@ -40,30 +40,5 @@ MonoBehaviour:
     otherUpdates: 0
     canTextBeSkipped: 1
     continueTime: 0
-  directDialogueSegue: {fileID: 0}
-  responses:
-  - Response: I crave the touch of a shroom.
-    loadOnId: 0
-    NewDialogue: {fileID: 0}
-    ActorID: 
-    subID: 
-    isIncremental: 0
-    FlagUpdate:
-    - flagID: MM_0
-      flagValue: 1
-  - Response: I need to focus on myself.
-    loadOnId: 0
-    NewDialogue: {fileID: 0}
-    ActorID: 
-    subID: 
-    isIncremental: 0
-    FlagUpdate:
-    - flagID: MM_0
-      flagValue: 2
-  - Response: Why are you trying so hard?
-    loadOnId: 0
-    NewDialogue: {fileID: 0}
-    ActorID: 
-    subID: 
-    isIncremental: 0
-    FlagUpdate: []
+  directDialogueSegue: {fileID: 11400000, guid: 7e1fa14fcb18d1b46952808343030857, type: 2}
+  responses: []

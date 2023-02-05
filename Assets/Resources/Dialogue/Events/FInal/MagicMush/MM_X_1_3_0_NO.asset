@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MM_X_1_3_0_NO
   m_EditorClassIdentifier: 
   actorID: MagicMush
-  subId: Opening
+  subId: 
   gameFlags: []
   dialogueChunks:
   - profile: {fileID: 11400000, guid: 25772f6056b854944b76a179ac6ea938, type: 2}
