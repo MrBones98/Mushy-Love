@@ -6,19 +6,23 @@ public class MushroomLoader : MonoBehaviour
 {
     [SerializeField] private List<Transform> _actorsPositioning = new List<Transform>();
     [SerializeField] private List<Mushroom> _mushrooms = new List<Mushroom>();
-    private List<GameObject> _mushroomCharacters = new List<GameObject>();
+    [SerializeField]private List<GameObject> _mushroomCharacters = new List<GameObject>();
     
-    public MushroomLoader Instance;
+    [HideInInspector] public MushroomLoader Instance;
     private void Awake()
     {
         Debug.Log("Hello one instance");
-        //if(Instance == null)
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(Instance);
+        }
+        //for (int i = 0; i < _actorsPositioning.Count-1; i++)
         //{
-        //    Instance = this;
-        //}
-        //else 
-        //{ 
-        //    Destroy(Instance); 
+        //    Debug.Log(_actorsPositioning[i]);
         //}
     }
 
@@ -34,12 +38,13 @@ public class MushroomLoader : MonoBehaviour
             spawnedMushroom.AddComponent<SpriteRenderer>();
             spawnedMushroom.GetComponent<SpriteRenderer>().sprite = mushroom.Image;
 
-            Instantiate(spawnedMushroom, Vector3.zero, Quaternion.identity);
+            //Instantiate(spawnedMushroom, Vector3.zero, Quaternion.identity);
 
             
             _mushroomCharacters.Add(spawnedMushroom);
             spawnedMushroom.transform.name = mushroom.Name;
             spawnedMushroom.transform.SetParent(container.transform);
+            spawnedMushroom.transform.position = _actorsPositioning[i].position;
             i++;
             Debug.Log(i);
         }
