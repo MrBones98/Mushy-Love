@@ -30,3 +30,5 @@ MonoBehaviour:
     continueTime: 0
   directDialogueSegue: {fileID: 0}
   responses: []
+  sporeEnd: 1
+  badEnd: 0

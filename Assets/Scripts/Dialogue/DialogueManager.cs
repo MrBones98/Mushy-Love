@@ -272,13 +272,13 @@ public class DialogueManager : MonoBehaviour
         if (dialogueEvent.sporeEnd)
         {
 			//DO spore end
-			_fadeToBlack.GetComponent<Animator>().SetTrigger("_fadeToBlack");
+			_fadeToBlack.GetComponent<Animator>().SetTrigger("FadeToBlack");
 			StartCoroutine(WaitForMainMenu());
 		}
         else if (dialogueEvent.badEnd)
         {
 			//Do bad end
-			_fadeToBlack.GetComponent<Animator>().SetTrigger("_fadeToBlack");
+			_fadeToBlack.GetComponent<Animator>().SetTrigger("FadeToBlack");
 			StartCoroutine(WaitForMainMenu());
         }
 
