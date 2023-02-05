@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-public class DialogueEvent : MonoBehaviour
+[CreateAssetMenu(fileName = "New Dialogue Event", menuName = "Dialogue/Event")]
+public class DialogueEvent : ScriptableObject
 {
 
 	[System.Serializable]
@@ -11,13 +12,14 @@ public class DialogueEvent : MonoBehaviour
 	{
 		public DialogueProfile profile;     //Sepparate calss that contains all personal info for the dialogue speaker. e.g. Name of speaker, voice of speaker, object of speaker etc.
 
+
 		[TextArea(4, 8)]
 		public string dialText;
 
-		public bool updateBehaviour = false;
-		public bool otherUpdates = false;
+        public bool updateBehaviour = false;
+        public bool otherUpdates = false;
 
-		[Header("Behaviour")]
+        [Header("Behaviour")]
 		[ShowIf("updateBehaviour", true)]
 		//public ActorMood actorMood;
 
@@ -31,6 +33,45 @@ public class DialogueEvent : MonoBehaviour
 		[ShowIf("otherUpdates", true)]
 		public float continueTime;
 
-
 	}
+
+	[Header("Identification")]
+	public string actorID;
+	public string subId;
+
+	[SerializeField]
+	public List<GameFlag> gameFlags = new List<GameFlag>();
+
+	[Header("Insert dialogue content here")]
+	public DialogueChunk[] dialogueChunks;
+
+	public DialogueEvent directDialogueSegue;
+
+	public List<DialogueResponse> responses;
+
+}
+
+[System.Serializable]
+public class DialogueResponse
+{
+	public string Response;
+
+	public bool loadOnId;
+
+	[SerializeField]
+	[HideIf("loadOnId")]
+	public DialogueEvent NewDialogue;
+
+	[ShowIf("loadOnId", true)]
+	public string ActorID;
+
+	[ShowIf("loadOnId", true)]
+	public string subID;
+
+	public bool isIncremental;
+
+	[SerializeField]
+	public List<GameFlag> FlagUpdate = new List<GameFlag>();
+
+
 }
