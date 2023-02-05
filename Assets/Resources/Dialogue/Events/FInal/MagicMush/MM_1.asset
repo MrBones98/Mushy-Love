@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6265bdb4992d644786eb00e0bc07cc4, type: 3}
+  m_Name: MM_1
+  m_EditorClassIdentifier: 
+  actorID: MagicMush
+  subId: Opening
+  gameFlags: []
+  dialogueChunks:
+  - profile: {fileID: 0}
+    dialText: What, not a fan?
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 0}
+    dialText: Pity.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 0}
+    dialText: 'It would be a shame... '
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 0}
+    dialText: to see a promising fungus miss out on what I have to offer.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  directDialogueSegue: {fileID: 0}
+  responses:
+  - Response: No time to fly
+    loadOnId: 0
+    NewDialogue: {fileID: 0}
+    ActorID: 
+    subID: 
+    isIncremental: 0
+    FlagUpdate:
+    - flagID: MM_0
+      flagValue: 1
+  - Response: I just wanna spore
+    loadOnId: 0
+    NewDialogue: {fileID: 0}
+    ActorID: 
+    subID: 
+    isIncremental: 0
+    FlagUpdate:
+    - flagID: MM_0
+      flagValue: 2

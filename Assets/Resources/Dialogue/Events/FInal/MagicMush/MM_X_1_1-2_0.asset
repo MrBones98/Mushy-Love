@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6265bdb4992d644786eb00e0bc07cc4, type: 3}
+  m_Name: MM_X_1_1-2_0
+  m_EditorClassIdentifier: 
+  actorID: MagicMush
+  subId: 
+  gameFlags: []
+  dialogueChunks:
+  - profile: {fileID: 11400000, guid: 25772f6056b854944b76a179ac6ea938, type: 2}
+    dialText: So, let me ask you, hongos.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 11400000, guid: 25772f6056b854944b76a179ac6ea938, type: 2}
+    dialText: If you truly are ready to enter the deep.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 11400000, guid: 25772f6056b854944b76a179ac6ea938, type: 2}
+    dialText: I want to know... what's the fruit of the fungus?
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  directDialogueSegue: {fileID: 0}
+  responses:
+  - Response: The embrace of shroom.
+    loadOnId: 0
+    NewDialogue: {fileID: 11400000, guid: 42b590d994db52f4f905e70f874903ec, type: 2}
+    ActorID: 
+    subID: 
+    isIncremental: 0
+    FlagUpdate:
+    - flagID: MM_0
+      flagValue: 1
+  - Response: The expansion of our land.
+    loadOnId: 0
+    NewDialogue: {fileID: 11400000, guid: afabc1495f9a86246aca954b304e3698, type: 2}
+    ActorID: 
+    subID: 
+    isIncremental: 0
+    FlagUpdate:
+    - flagID: MM_0
+      flagValue: 2
+  - Response: The sustinence of flesh.
+    loadOnId: 0
+    NewDialogue: {fileID: 11400000, guid: 82949b482b3f8b649b24dc36291b1c8b, type: 2}
+    ActorID: 
+    subID: 
+    isIncremental: 0
+    FlagUpdate: []
