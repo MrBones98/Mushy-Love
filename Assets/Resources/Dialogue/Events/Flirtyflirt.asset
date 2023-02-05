@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6265bdb4992d644786eb00e0bc07cc4, type: 3}
+  m_Name: Flirtyflirt
+  m_EditorClassIdentifier: 
+  actorID: John
+  subId: help
+  gameFlags:
+  - flagID: a
+    flagValue: 0
+  - flagID: b
+    flagValue: 0
+  - flagID: c
+    flagValue: 0
+  dialogueChunks:
+  - profile: {fileID: 11400000, guid: 991955258edcd9f439fb54f1151f6c4b, type: 2}
+    dialText: Hey there, cutie.
+    updateBehaviour: 1
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 0}
+    dialText: I'm herre to mingle.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 0}
+    dialText: Plese do be single.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  directDialogueSegue: {fileID: 0}
+  responses:
+  - Response: ResponseTest
+    NewDialogue: {fileID: 11400000, guid: f77e86ce169d82d4ba5fd2235a1cbcaa, type: 2}
+    loadOnId: 1
+    ActorID: DeathCap
+    subID: testbeginning
+    FlagUpdate:
+    - flagID: c
+      flagValue: 1
+  - Response: ResponseTest1
+    NewDialogue: {fileID: 0}
+    loadOnId: 1
+    ActorID: DeathCap
+    subID: testbeginning
+    FlagUpdate:
+    - flagID: c
+      flagValue: 2

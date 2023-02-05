@@ -12,6 +12,7 @@ public class DialogueEvent : ScriptableObject
 	{
 		public DialogueProfile profile;     //Sepparate calss that contains all personal info for the dialogue speaker. e.g. Name of speaker, voice of speaker, object of speaker etc.
 
+
 		[TextArea(4, 8)]
 		public string dialText;
 
@@ -36,8 +37,41 @@ public class DialogueEvent : ScriptableObject
 
 	[Header("Identification")]
 	public string actorID;
-	//public List<GameFlag> gameFlags = new List<GameFlag>();
+	public string subId;
+
+	[SerializeField]
+	public List<GameFlag> gameFlags = new List<GameFlag>();
 
 	[Header("Insert dialogue content here")]
 	public DialogueChunk[] dialogueChunks;
+
+	public DialogueEvent directDialogueSegue;
+
+	public List<DialogueResponse> responses;
+
+}
+
+[System.Serializable]
+public class DialogueResponse
+{
+	public string Response;
+
+	public bool loadOnId;
+
+	[SerializeField]
+	[HideIf("loadOnId")]
+	public DialogueEvent NewDialogue;
+
+	[ShowIf("loadOnId", true)]
+	public string ActorID;
+
+	[ShowIf("loadOnId", true)]
+	public string subID;
+
+	public bool isIncremental;
+
+	[SerializeField]
+	public List<GameFlag> FlagUpdate = new List<GameFlag>();
+
+
 }

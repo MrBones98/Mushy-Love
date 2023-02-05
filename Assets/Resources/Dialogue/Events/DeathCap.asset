@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6265bdb4992d644786eb00e0bc07cc4, type: 3}
+  m_Name: DeathCap
+  m_EditorClassIdentifier: 
+  actorID: DeathCap
+  subId: testbeginning
+  gameFlags:
+  - flagID: c
+    flagValue: 1
+  dialogueChunks:
+  - profile: {fileID: 11400000, guid: 991955258edcd9f439fb54f1151f6c4b, type: 2}
+    dialText: You did it, babey.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  directDialogueSegue: {fileID: 0}
+  responses: []
