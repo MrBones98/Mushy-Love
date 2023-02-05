@@ -11,4 +11,5 @@ public class Mushroom : ScriptableObject
 
     [Tooltip("Spore count needed to encounter Cordy <3")]
     public int Threshold;
+    public DialogueEvent DialogueEvent;
 }

@@ -36,6 +36,8 @@ public class DialogueManager : MonoBehaviour
 	private string completeText;
 	public DialogueEvent dialogueEvent;
 
+	int responseSelect;
+
 	void Start()
     {
         
@@ -163,10 +165,51 @@ public class DialogueManager : MonoBehaviour
 		isCurrentlyTyping = false;
 	}
 
+	void Responding()
+    {
+		
+
+    }
+
+    public void SelectResponse(int responseIndex)
+    {
+		inResponse = false;
+		print("stfu");
+		//responseIndex = responseIndex
+		print(dialogueEvent.responses.Count);
+		DialogueResponse currentResponse = dialogueEvent.responses[responseIndex];
+
+		if (currentResponse.loadOnId)
+        {
+
+			foreach (var dialogueFlag in currentResponse.FlagUpdate)
+			{
+				foreach (var managerFlag in GameFlagManager.instance.gameFlags)
+				{
+					if (dialogueFlag.flagID == managerFlag.flagID)
+					{
+                        if (currentResponse.isIncremental)
+                        {
+							managerFlag.flagValue += dialogueFlag.flagValue;
+						}
+                        else
+                        {
+							managerFlag.flagValue = dialogueFlag.flagValue;
+                        }
+	
+					}
+				}
+			}
+
+			InitiateDialogue.Instance.InitiateDialogueByID(currentResponse.ActorID, currentResponse.subID);
+		}
+    }
+
 
 	public void EndOfDialogue()
     {
 		inDialogueEvent = false;
 		print("Is done");
+
     }
 }

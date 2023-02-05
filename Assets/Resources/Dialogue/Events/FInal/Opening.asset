@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6265bdb4992d644786eb00e0bc07cc4, type: 3}
+  m_Name: Opening
+  m_EditorClassIdentifier: 
+  actorID: Opening
+  subId: opening
+  gameFlags: []
+  dialogueChunks:
+  - profile: {fileID: 0}
+    dialText: Welcome.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 0}
+    dialText: You are now connected to the Wood Wide Web.
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  - profile: {fileID: 0}
+    dialText: What fungi do you prefer?
+    updateBehaviour: 0
+    otherUpdates: 0
+    canTextBeSkipped: 1
+    continueTime: 0
+  directDialogueSegue: {fileID: 0}
+  responses:
+  - Response: Saprotropic
+    loadOnId: 0
+    NewDialogue: {fileID: 0}
+    ActorID: 
+    subID: 
+    isIncremental: 1
+    FlagUpdate:
+    - flagID: MagicMush
+      flagValue: 1
+  - Response: Parasitic
+    loadOnId: 0
+    NewDialogue: {fileID: 0}
+    ActorID: 
+    subID: 
+    isIncremental: 1
+    FlagUpdate:
+    - flagID: Cordy
+      flagValue: 1
+    - flagID: DeathCap
+      flagValue: 1
+  - Response: Myzorrhizal
+    loadOnId: 0
+    NewDialogue: {fileID: 0}
+    ActorID: 
+    subID: 
+    isIncremental: 0
+    FlagUpdate:
+    - flagID: 
+      flagValue: 0
+    - flagID: 
+      flagValue: 0
